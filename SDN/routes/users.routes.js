@@ -6,7 +6,7 @@ const {
   postLogin,
   getRegister,
   postRegister,
-} = require("./../controllers/users.controller");
+} = require("../controllers/users.controller");
 
 router.get("/login", getLogin);
 router.post("/login", postLogin);
