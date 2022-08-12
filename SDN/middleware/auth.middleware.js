@@ -1,5 +1,5 @@
 const ensureAuth = (req, res, next) => {
-   if ((req, isAuthenticated())) {
+   if (req.isAuthenticated()) {
       next()
    } else {
       res.redirect("/users/login")
