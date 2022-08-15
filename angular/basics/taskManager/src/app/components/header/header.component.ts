@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title = 'Task Manager';
+  //this HeaderComponent.title gets referenced in header.component.html
   constructor() {}
   ngOnInit(): void {}
+
+  /*
+    toggleAddTask() is called when (btnClick)ed
+    toggleAddTask() is used in header.component.html,
+    so, it should be defined in header.component.ts
+  */
   toggleAddTask() {
-    console.log('toggled');
+    console.log('Added');
   }
 }

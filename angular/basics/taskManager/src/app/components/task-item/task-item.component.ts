@@ -9,6 +9,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task!: Task;
+  //This task is the input denoter
   //the exclamation resolves errors
   faTimes = faTimes;
   constructor() {}

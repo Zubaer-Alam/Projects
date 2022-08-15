@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
   tasks: Task[] = TASKS;
-  // TASK is a const imported from mockTasks.ts
+  // TASK is a const imported from mockTasks.ts (DUmmy JSON server)
   // Task[] is the type of tasks which is imported from Task.ts
   constructor() {}
 
