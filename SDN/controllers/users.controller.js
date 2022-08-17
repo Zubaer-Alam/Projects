@@ -3,13 +3,13 @@ const bcrypt = require("bcryptjs")
 const passport = require("passport")
 
 const getLogin = (req, res) => {
-   res.render("users/login.ejs")
+   res.render("users/login.ejs", { error: req.flash("error") })
 }
 
 const postLogin = (req, res, next) => {
    passport.authenticate("local", {
       successRedirect: "/dashboard",
-      failureRedirect: "/users/login",
+      failureRedirect: "/login",
       failureFlash: true,
    })(req, res, next)
 }

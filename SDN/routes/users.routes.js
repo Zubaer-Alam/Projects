@@ -1,6 +1,5 @@
 const express = require("express")
 const router = express.Router()
-const ensureAuth = require("./../middleware/auth.middleware")
 const {
    getLogin,
    postLogin,
@@ -15,8 +14,10 @@ router.get("/register", getRegister)
 router.post("/register", postRegister)
 
 router.get("/logout", (req, res) => {
-   req.logout()
-   res.redirect("/")
+   req.logout(() => {
+      res.redirect("/login")
+      console.log("logged out")
+   })
 })
 
 module.exports = router

@@ -1,16 +1,16 @@
-const localStrategy = require("passport-local")
+const LocalStrategy = require("passport-local")
 const bcrypt = require("bcryptjs")
 const User = require("./../models/User.model")
 
 module.exports = (passport) => {
    passport.use(
-      new localStrategy({ usernameField: "email" }, (email, password, done) => {
+      new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
          //Match User
          User.findOne({ email: email })
             .then((user) => {
                if (!user) {
                   return done(null, false, {
-                     message: "This email isn't registered!",
+                     message: "This email is not registered!",
                   })
                } else {
                   //Match Password
